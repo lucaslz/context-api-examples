@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
 
-function App() {
+import CountProvider from "./context/Count";
+
+import Count from "./page/Count";
+import CountTwo from "./page/CountTwo";
+import Mirror from "./page/Mirror";
+import MirrorTwo from "./page/MirrorTwo";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="sm">
+        <CountProvider>
+          <Count />
+            <br />
+            <hr />
+            <br />
+          <Mirror />
+            <br />
+            <hr />
+            <br />
+          <MirrorTwo />
+            <br />
+            <hr />
+            <br />
+          <CountTwo />
+        </CountProvider>
+      </Container>
+    </React.Fragment>
   );
 }
 
